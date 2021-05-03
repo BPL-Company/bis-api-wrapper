@@ -29,6 +29,9 @@ class Api:
     def create_user(self, **kwargs):
         return self.make_request(f'create_user', kwargs)
 
+    def create_tg_user(self, **kwargs):
+        return self.make_request(f'create_tg_user', kwargs)
+
     def create_minecraft_user(self, **kwargs):
         return self.make_request(f'create_minecraft_user', kwargs)
 

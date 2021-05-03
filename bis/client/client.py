@@ -32,6 +32,13 @@ class Client:
         new_user = User(response.result)
         return new_user
 
+    def create_tg_user(self, nickname, tg_id):
+        response = Response(self.api.create_tg_user(nickname=nickname, tg_id=tg_id))
+        if not response.ok:
+            self.exceptions.raise_exception(response.errcode, response.reason)
+        new_user = User(response.result)
+        return new_user
+
     def create_minecraft_user(self, nickname):
         response = Response(self.api.create_minecraft_user(nickname=nickname))
         if not response.ok:
