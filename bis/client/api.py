@@ -26,6 +26,9 @@ class Api:
     def get_user_by_nickname(self, nickname):
         return self.make_request(f'get_user_by_nickname/{nickname}')
 
+    def merge_users(self, **kwargs):
+        return self.make_request(f'merge_users', kwargs)
+
     def create_user(self, **kwargs):
         return self.make_request(f'create_user', kwargs)
 

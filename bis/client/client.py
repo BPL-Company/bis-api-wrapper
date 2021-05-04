@@ -32,6 +32,13 @@ class Client:
         new_user = User(response.result)
         return new_user
 
+    def merge_users(self, first_id, second_id):
+        response = Response(self.api.create_tg_user(first_id=first_id, second_id=second_id))
+        if not response.ok:
+            self.exceptions.raise_exception(response.errcode, response.reason)
+        new_user = User(response.result)
+        return new_user
+
     def create_tg_user(self, nickname, tg_id):
         response = Response(self.api.create_tg_user(nickname=nickname, tg_id=tg_id))
         if not response.ok:
