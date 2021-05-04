@@ -11,6 +11,13 @@ class Client:
     def get_auth_token(self):
         return self.api.get_auth_token()['result']
 
+    def get_user_by_tg_id(self, tg_id):
+        response = Response(self.api.get_user_by_tg_id(tg_id=tg_id))
+        if not response.ok:
+            self.exceptions.raise_exception(response.errcode, response.reason)
+        user = User(response.result)
+        return user
+
     def get_user_by_id(self, user_id):
         response = Response(self.api.get_user_by_id(user_id=user_id))
         if not response.ok:

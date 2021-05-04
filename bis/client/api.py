@@ -23,6 +23,9 @@ class Api:
     def get_user_by_id(self, user_id):
         return self.make_request(f'get_user_by_id/{user_id}')
 
+    def get_user_by_tg_id(self, tg_id):
+        return self.make_request(f'get_user_by_tg_id/{tg_id}')
+
     def get_user_by_nickname(self, nickname):
         return self.make_request(f'get_user_by_nickname/{nickname}')
 
