@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='bis-api-wrapper',
-    version='0.0.1',
+    version='0.1.1',
     author='Vezono',
     author_email='vezonolab@gmail.com',
     description='Wrapper for BIS',

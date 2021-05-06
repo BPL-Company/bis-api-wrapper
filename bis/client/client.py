@@ -66,8 +66,20 @@ class Client:
             self.exceptions.raise_exception(response.errcode, response.reason)
         return response.ok
 
+    def delete_user(self, user_id):
+        response = Response(self.api.delete_user(user_id=user_id))
+        if not response.ok:
+            self.exceptions.raise_exception(response.errcode, response.reason)
+        return response.ok
+
     def add_auth(self, user_id, auth_method, auth_string):
         response = Response(self.api.add_auth(user_id=user_id, auth_method=auth_method, auth_string=auth_string))
+        if not response.ok:
+            self.exceptions.raise_exception(response.errcode, response.reason)
+        return response.ok
+
+    def remove_auth(self, user_id, auth_method, auth_string):
+        response = Response(self.api.remove_auth(user_id=user_id, auth_method=auth_method, auth_string=auth_string))
         if not response.ok:
             self.exceptions.raise_exception(response.errcode, response.reason)
         return response.ok

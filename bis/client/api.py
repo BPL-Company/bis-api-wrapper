@@ -41,11 +41,17 @@ class Api:
     def create_minecraft_user(self, **kwargs):
         return self.make_request(f'create_minecraft_user', kwargs)
 
+    def delete_user(self, **kwargs):
+        return self.make_request(f'delete_user', kwargs)
+
     def add_connection(self, **kwargs):
         return self.make_request(f'add_connection', kwargs)
 
     def add_auth(self, **kwargs):
         return self.make_request(f'add_auth', kwargs)
+
+    def remove_auth(self, **kwargs):
+        return self.make_request(f'remove_auth', kwargs)
 
     def update_nickname(self, **kwargs):
         return self.make_request(f'update_nickname', kwargs)
